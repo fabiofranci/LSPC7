@@ -1,5 +1,5 @@
 <widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="it.firenzewebdivision.lspc7" version="1.0.2">
-  <name>LSPC5</name>
+  <name>LSPC7</name>
   <description>La saetta pest control app 7.</description>
   <author href="http://www.firenzewebdivision.it" email="fabio.franci@gmail.com">Fabio Franci</author>
   <content src="index.html"/>
