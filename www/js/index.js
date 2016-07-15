@@ -1168,6 +1168,8 @@ function onDeviceReady() {
         clienti_di_oggi.push(nuovocliente.id_sede_cliente);
         $("#totclientidioggi").html(clienti_di_oggi.length);
 
+        console.log(sedi_clienti_server);
+
         cliente=sedi_clienti_server[id_sede_cliente];
 
         console.log(cliente);
