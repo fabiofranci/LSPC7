@@ -1165,23 +1165,19 @@ function onDeviceReady() {
     });
 
     function aggiungiClienteDiOggi(nuovocliente) {
-
-        console.log("nuovocliente:"+nuovocliente);
-
-
         clienti_di_oggi.push(nuovocliente.id_sede_cliente);
         $("#totclientidioggi").html(clienti_di_oggi.length);
 
-        var indicesede=0;
+
         for (i=0;i<sedi_clienti_server.length;i++) {
             if (sedi_clienti_server[i][id]==nuovocliente.id_sede_cliente) {
-                indicesede=i;
-                break;
+                    alert("Trovato!!!");
+                    cliente=sedi_clienti_server[i];
             }
         }
-        cliente=sedi_clienti_server[indicesede];
 
-        console.log(cliente);
+        //cliente=sedi_clienti_server[nuovocliente.id_sede_cliente];
+
         rigaselect="INSERT OR REPLACE INTO SERVER_SEDI_CLIENTI (id, cliente_e_sede, sede, indirizzo, CAP, citta, provincia, persona_di_riferimento, telefono, email, note, ultimo_aggiornamento) SELECT '"+cliente.id+"' AS id, '"+cliente.cliente_e_sede+"' AS cliente_e_sede, '"+cliente.sede+"' as sede, '"+cliente.indirizzo+"' AS indirizzo,'"+cliente.CAP+"' AS CAP, '"+cliente.citta+"' AS citta,'"+cliente.provincia+"' AS provincia, '"+cliente.persona_di_riferimento+"' AS persona_di_riferimento,'"+cliente.telefono+"' AS telefono, '"+cliente.email+"' AS email,'"+cliente.note+"' AS note,'"+local_ultimo_aggiornamento+"' AS ultimo_aggiornamento  ";
         console.log(rigaselect);
             //ora può lanciare la transazione
@@ -1190,6 +1186,7 @@ function onDeviceReady() {
                 onDbError,
                 function() {
                     alert("Cliente di oggi aggiunto");
+
                 }
             );
     }
