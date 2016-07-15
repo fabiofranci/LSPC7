@@ -1167,35 +1167,10 @@ function onDeviceReady() {
     });
 
     function aggiungiClienteDiOggi(nuovocliente) {
-        db.transaction(
-            function (tx) {
-                tx.executeSql("INSERT OR REPLACE INTO LOCAL_POSTAZIONI (id_sede, id_servizio, codice_postazione, nome, ultimo_aggiornamento, latitudine_p, longitudine_p) VALUES (?,?,?,?,?,?,?)",[nuovapostazione.id_sede_cliente, nuovapostazione.id_tipo_servizio, nuovapostazione.codice_postazione, nuovapostazione.nome, nuovapostazione.ultimo_aggiornamento,latitudine_corrente,longitudine_corrente]);
-            },
-            onDbError,
-            function () {
-                var AggiornamentiPostazioni=true;
-                //ora bisogna aggiungere l'ispezione per la visita corrente, se c'è
-                if (VisitaCorrente.codice_visita) {
-                    result=confirm("Aggiungi questa postazione alla visita corrente?");
-                    if (result==1) {
-                        var codice_ispezione=VisitaCorrente.codice_visita+"|"+nuovapostazione.codice_postazione;
-                        var codice_postazione=nuovapostazione.codice_postazione;
-                        var codice_visita=VisitaCorrente.codice_visita;
-                        var ultimo_aggiornamento=getDateTime();
-                        //alert(codice_ispezione);
-                        //alert(codice_postazione);
-                        //alert(codice_visita);
-                        //alert(ultimo_aggiornamento);
-                        db.transaction(
-                            function (tx3) { tx3.executeSql("INSERT OR REPLACE INTO LOCAL_ISPEZIONI (codice_ispezione,codice_visita,codice_postazione,ultimo_aggiornamento,stato_postazione,latitudine,longitudine) VALUES (?,?,?,?,?,?,?)", [codice_ispezione,codice_visita,codice_postazione,ultimo_aggiornamento,'Ancora da Visionare',latitudine_corrente,longitudine_corrente]); },
-                            onDbError,
-                            function () { //alert("ispezione "+codice_ispezione+" inserita");
-                            }
-                        );
-                    }
-                }
-            }
-        );
+
+        alert("Eccomi qui");
+        alert(nuovocliente.id_sede_cliente);
+
     }
 
     function aggiungiPostazione(nuovapostazione) {
