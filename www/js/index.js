@@ -116,6 +116,7 @@ function onDeviceReady() {
     var tipiservizio=new Array(); //lo popoliamo getTipiServizioListFromServer()
     var users=new Array(); //lo popoliamo dopo getUsersListFromServer()
     var visite_in_corso=new Array(); //lo popoliamo dopo getVisiteFromServer()
+    var clienti_di_oggi=new Array(); //lo popoliamo dopo getVisiteFromServer()
 
 
 // onSuccess Callback
@@ -572,6 +573,11 @@ function onDeviceReady() {
                 $("#SediClienti").addClass('updated_class');
 
                 //salto la scrittura su DB perché devo selezionare i clienti di oggi da un'altra schermata
+
+                clienti_di_oggi.length=0;
+                $("#totclientidioggi").html(clienti_di_oggi.length);
+
+
                 getTipiServizioListFromServer();
                 /*
 
