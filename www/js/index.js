@@ -1168,7 +1168,7 @@ function onDeviceReady() {
         clienti_di_oggi.push(nuovocliente.id_sede_cliente);
         $("#totclientidioggi").html(clienti_di_oggi.length);
 
-
+        var cliente={};
         for (i=0;i<sedi_clienti_server.length;i++) {
             if (sedi_clienti_server[i][id]==nuovocliente.id_sede_cliente) {
                     alert("Trovato!!!");
