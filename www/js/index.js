@@ -576,7 +576,7 @@ function onDeviceReady() {
                 $("#totclientidioggi").html(clienti_di_oggi.length);
 
             $.each(sedi_clienti_server, function (index, cliente) {
-                sedi[cliente.sede]=cliente.cliente_e_sede;
+                sedi[cliente.id]=cliente.cliente_e_sede;
                 });
 
 
