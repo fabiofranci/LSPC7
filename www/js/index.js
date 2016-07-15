@@ -697,7 +697,11 @@ function onDeviceReady() {
                         $("#TipiServizio").addClass('updated_class');
                         //ora chiama quella successiva
                         //alert("chiamerei getPostazioniListFromServer 2");
-                        getPostazioniListFromServer();
+
+
+                        setUltimoAggiornamento('getPostazioniListFromServer');
+
+                        //getPostazioniListFromServer();
                     }
                 }
             );
