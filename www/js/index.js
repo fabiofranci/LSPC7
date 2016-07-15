@@ -577,7 +577,7 @@ function onDeviceReady() {
 
             $.each(sedi_clienti_server, function (index, cliente) {
                 sedi[cliente.sede]=cliente.cliente_e_sede;
-            };
+                )};
 
 
 
