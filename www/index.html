@@ -68,6 +68,7 @@
             <div data-role="collapsible-set" data-theme="b" data-content-theme="b">
                 <div data-role="collapsible" data-collapsed="false">
                     <h3>Clienti di oggi (<span id="totclientidioggi"></span>)</h3>
+                    <button id="AggiungiClienteDiOggi" data-icon="flat-menu" data-theme="g">Aggiungi</button>
                     <div id="listaclientidioggi"></div>
                 </div>
             </div>
@@ -109,6 +110,38 @@
     </div>
 </div>
 <!--// (f) pagina principale -->
+
+<!-- (i) nuovo cliente di oggi -->
+<div data-role="page" id="nuovo_cliente_di_oggi">
+    <div data-role="header">
+        <a data-iconpos="notext"  href="#home" data-transition="slide" data-direction="reverse" data-role="button" data-icon="home" title="Home">Home</a>
+        <h1>Aggiungi cliente</h1>
+    </div>
+
+    <div data-role="content" role="main">
+        <form id="nuovocliente_form" class="input-group">
+
+            <div data-role="fieldcontain">
+                <div id="sede_cliente_container">
+                    Cliente<br/>
+                    <select name="id_sede_cliente" id="id_sede_cliente">
+                    </select>
+                </div>
+            </div>
+            <div data-role="fieldcontain">
+                <div data-role="fieldcontain">
+                    <div class="ui-block-a"><button data-icon="flat-checkround" data-theme="b" id="nuovocliente_submit" name="nuovapostazione_submit">Aggiungi</button></div>
+                </div>
+            </div>
+        </form>
+
+    </div>
+</div>
+<!-- (f) nuovo cliente di oggi -->
+
+
+
+
 
 <!-- (i) nuova postazione -->
 <div data-role="page" id="nuova_postazione">
