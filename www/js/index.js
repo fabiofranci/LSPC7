@@ -579,8 +579,6 @@ function onDeviceReady() {
                 sedi[cliente.id]=cliente.cliente_e_sede;
                 });
 
-
-
                 getTipiServizioListFromServer();
                 /*
 
