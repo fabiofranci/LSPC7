@@ -573,9 +573,12 @@ function onDeviceReady() {
                 $("#SediClienti").addClass('updated_class');
 
                 //salto la scrittura su DB perché devo selezionare i clienti di oggi da un'altra schermata
-
-                clienti_di_oggi.length=0;
                 $("#totclientidioggi").html(clienti_di_oggi.length);
+
+            $.each(sedi_clienti_server, function (index, cliente) {
+                sedi[cliente.sede]=cliente.cliente_e_sede;
+            };
+
 
 
                 getTipiServizioListFromServer();
