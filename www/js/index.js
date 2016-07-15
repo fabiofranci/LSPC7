@@ -1559,6 +1559,11 @@ function onDeviceReady() {
         }
     });
 
+
+    $('#home').on('pagebeforeshow', function(){
+        $(this).trigger('pagecreate');
+    });
+
     $(document).on("pageshow","#fine_visita",function(){ // When entering pagetwo
         $('#fcmsig').jSignature({'UndoButton':false,color:"#000000",lineWidth:1});
     });
