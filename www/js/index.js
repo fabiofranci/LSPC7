@@ -116,7 +116,7 @@ function onDeviceReady() {
     var tipiservizio=new Array(); //lo popoliamo getTipiServizioListFromServer()
     var users=new Array(); //lo popoliamo dopo getUsersListFromServer()
     var visite_in_corso=new Array(); //lo popoliamo dopo getVisiteFromServer()
-    var clienti_di_oggi=new Array(); //lo popoliamo dopo getVisiteFromServer()
+    var clienti_di_oggi={}; //lo popoliamo a mano
 
 
 // onSuccess Callback
@@ -1165,7 +1165,6 @@ function onDeviceReady() {
     });
 
     function aggiungiClienteDiOggi(nuovocliente) {
-        clienti_di_oggi.push(nuovocliente.id_sede_cliente);
         $("#totclientidioggi").html(clienti_di_oggi.length);
 
         var cliente={};
@@ -1173,7 +1172,7 @@ function onDeviceReady() {
             console.log(i+":"+sedi_clienti_server[i].id);
             if (sedi_clienti_server[i].id==nuovocliente.id_sede_cliente) {
                     console.log("Trovato!!!");
-                    cliente=sedi_clienti_server[i];
+                    clienti_di_oggi[nuovocliente.id_sede_cliente]=sedi_clienti_server[i];
             }
         }
 
@@ -1187,6 +1186,22 @@ function onDeviceReady() {
                 onDbError,
                 function() {
                     alert("Cliente di oggi aggiunto");
+
+                    var datiRiga='<ul>';
+                    var totclientidioggi=0;
+                    for (var key in clienti_di_oggi) {
+                        cliente=clienti_di_oggi[key];
+                        //alert(visita.codice_visita);
+                        //alert(visita.id_sede);
+                            datiRiga+="<li>"+cliente.cliente_e_sede+"</li>";
+                            totclientidioggi++;
+                    }
+                    datiRiga+="</ul>";
+                    $("#totclientidioggi").html(totclientidioggi);
+                    $("#listaclientidioggi").html('');
+                    $("#listaclientidioggi").append(datiRiga);
+
+
 
                 }
             );
