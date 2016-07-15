@@ -568,6 +568,9 @@ function onDeviceReady() {
                 rigaselect='';
                 sedi_clienti_server = data.items;
 
+                $("#SediClienti").removeClass('updating_class');
+                $("#SediClienti").addClass('updated_class');
+
                 //salto la scrittura su DB perché devo selezionare i clienti di oggi da un'altra schermata
                 getTipiServizioListFromServer();
                 /*
