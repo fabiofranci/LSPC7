@@ -1170,7 +1170,8 @@ function onDeviceReady() {
 
         var cliente={};
         for (i=0;i<sedi_clienti_server.length;i++) {
-            if (sedi_clienti_server[i][id]==nuovocliente.id_sede_cliente) {
+            console.log(i+":"+sedi_clienti_server[i].id);
+            if (sedi_clienti_server[i].id==nuovocliente.id_sede_cliente) {
                     alert("Trovato!!!");
                     cliente=sedi_clienti_server[i];
             }
