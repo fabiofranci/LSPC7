@@ -1165,6 +1165,10 @@ function onDeviceReady() {
     });
 
     function aggiungiClienteDiOggi(nuovocliente) {
+
+        console.log("nuovocliente:"+nuovocliente);
+
+
         clienti_di_oggi.push(nuovocliente.id_sede_cliente);
         $("#totclientidioggi").html(clienti_di_oggi.length);
 
