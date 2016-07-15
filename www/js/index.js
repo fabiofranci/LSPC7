@@ -567,6 +567,11 @@ function onDeviceReady() {
                 console.log("getSediClientiListFromServer post success");
                 rigaselect='';
                 sedi_clienti_server = data.items;
+
+                //salto la scrittura su DB perché devo selezionare i clienti di oggi da un'altra schermata
+                getTipiServizioListFromServer();
+                /*
+
                 var i=0;
                 $.each(sedi_clienti_server, function (index, cliente) {
                     if (i==0) {
@@ -625,6 +630,9 @@ function onDeviceReady() {
                     //alert("chiamerei tiposervizio 2");
                     getTipiServizioListFromServer();
                 }
+
+                */
+
             }
         );
 
