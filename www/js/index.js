@@ -1173,6 +1173,7 @@ function onDeviceReady() {
             if (sedi_clienti_server[i].id==nuovocliente.id_sede_cliente) {
                     console.log("Trovato!!!");
                     clienti_di_oggi[nuovocliente.id_sede_cliente]=sedi_clienti_server[i];
+                    cliente=sedi_clienti_server[i];
             }
         }
 
@@ -1200,8 +1201,6 @@ function onDeviceReady() {
                     $("#totclientidioggi").html(totclientidioggi);
                     $("#listaclientidioggi").html('');
                     $("#listaclientidioggi").append(datiRiga);
-
-
 
                 }
             );
