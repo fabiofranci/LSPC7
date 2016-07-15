@@ -1168,15 +1168,11 @@ function onDeviceReady() {
         clienti_di_oggi.push(nuovocliente.id_sede_cliente);
         $("#totclientidioggi").html(clienti_di_oggi.length);
 
-        cliente=sedi_clienti_server[id_sede_cliente]
+        cliente=sedi_clienti_server[id_sede_cliente];
 
-        $.each(sedi_clienti_server, function (index, cliente) {
-            if (cliente.id==nuovocliente.id_sede_cliente) {
-                rigaselect="INSERT OR REPLACE INTO SERVER_SEDI_CLIENTI (id, cliente_e_sede, sede, indirizzo, CAP, citta, provincia, persona_di_riferimento, telefono, email, note, ultimo_aggiornamento) SELECT '"+cliente.id+"' AS id, '"+cliente.cliente_e_sede+"' AS cliente_e_sede, '"+cliente.sede+"' as sede, '"+cliente.indirizzo+"' AS indirizzo,'"+cliente.CAP+"' AS CAP, '"+cliente.citta+"' AS citta,'"+cliente.provincia+"' AS provincia, '"+cliente.persona_di_riferimento+"' AS persona_di_riferimento,'"+cliente.telefono+"' AS telefono, '"+cliente.email+"' AS email,'"+cliente.note+"' AS note,'"+local_ultimo_aggiornamento+"' AS ultimo_aggiornamento  ";
-            }
-        });
+        console.log(cliente);
+        rigaselect="INSERT OR REPLACE INTO SERVER_SEDI_CLIENTI (id, cliente_e_sede, sede, indirizzo, CAP, citta, provincia, persona_di_riferimento, telefono, email, note, ultimo_aggiornamento) SELECT '"+cliente.id+"' AS id, '"+cliente.cliente_e_sede+"' AS cliente_e_sede, '"+cliente.sede+"' as sede, '"+cliente.indirizzo+"' AS indirizzo,'"+cliente.CAP+"' AS CAP, '"+cliente.citta+"' AS citta,'"+cliente.provincia+"' AS provincia, '"+cliente.persona_di_riferimento+"' AS persona_di_riferimento,'"+cliente.telefono+"' AS telefono, '"+cliente.email+"' AS email,'"+cliente.note+"' AS note,'"+local_ultimo_aggiornamento+"' AS ultimo_aggiornamento  ";
         console.log(rigaselect);
-        if (rigaselect) {
             //ora può lanciare la transazione
             db.transaction(
                 function (tx3) { tx3.executeSql(rigaselect); },
@@ -1199,7 +1195,6 @@ function onDeviceReady() {
 
                 }
             );
-        }
     }
 
     function aggiungiPostazione(nuovapostazione) {
