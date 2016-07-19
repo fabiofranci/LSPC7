@@ -1145,6 +1145,10 @@ function onDeviceReady() {
 
     }
 
+    $("#CaricaPostazioni").on("click", function(e) {
+       console.log("Premuto Carica Postazioni");
+    });
+
     $("#nuovocliente_submit").on("click", function (e) {
         e.preventDefault();
         var nuovocliente={};
