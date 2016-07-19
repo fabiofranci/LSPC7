@@ -740,8 +740,6 @@ function onDeviceReady() {
 
         alert(clientistring);
 
-        return;
-
         $.getJSON(serviceURL + 'gettablepostazioni.php?ult='+global_ultimo_aggiornamento, function (data) {
                 console.log("getPostazioniListFromServer post success");
 
