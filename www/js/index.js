@@ -579,6 +579,22 @@ function onDeviceReady() {
                 sedi[cliente.id]=cliente.cliente_e_sede;
                 });
 
+
+
+                        db.transaction(function (tx) {
+                            tx.executeSql('SELECT * FROM SERVER_SEDI_CLIENTI', [], function (tx, results) {
+                                    var len = results.rows.length, i;
+                                    for (i = 0; i < len; i++){
+                                        cliente_e_sede=results.rows.item(i).cliente_e_sede;
+                                        id_sede=results.rows.item(i).id;
+                                        clienti_di_oggi[id_sede]=cliente_e_sede;
+                                        alert("Inserisco in clienti di oggi:"+id_sede+" sede:"+cliente_e_sede);
+                                    }
+                                }, function() {
+                                }
+                            );
+                        });
+
                 getTipiServizioListFromServer();
                 /*
 
