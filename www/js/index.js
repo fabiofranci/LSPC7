@@ -692,7 +692,7 @@ function onDeviceReady() {
                                 $("#TipiServizio").addClass('updated_class');
                                 //alert("chiamerei getPostazioniListFromServer 1");
                                 //ora chiama quella successiva
-                                getPostazioniListFromServer();
+                                //getPostazioniListFromServer();
                             }
                         );
                     } else {
