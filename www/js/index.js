@@ -584,20 +584,15 @@ function onDeviceReady() {
                         db.transaction(function (tx) {
                             tx.executeSql('SELECT * FROM SERVER_SEDI_CLIENTI', [], function (tx, results) {
                                     var len = results.rows.length, i;
+                                    var datiRiga='<ul>';
+                                    var totclientidioggi=0;
                                     for (i = 0; i < len; i++){
                                         cliente_e_sede=results.rows.item(i).cliente_e_sede;
                                         id_sede=results.rows.item(i).id;
                                         clienti_di_oggi[id_sede]=cliente_e_sede;
-                                        //alert("Inserisco in clienti di oggi:"+id_sede+" sede:"+cliente_e_sede);
-                                    }
-                                    var datiRiga='<ul>';
-                                    var totclientidioggi=0;
-                                    for (var key in clienti_di_oggi) {
-                                        cliente=clienti_di_oggi[key];
-                                        //alert(visita.codice_visita);
-                                        //alert(visita.id_sede);
-                                        datiRiga+="<li>"+cliente.cliente_e_sede+"</li>";
+                                        datiRiga+="<li>"+cliente_e_sede+"</li>";
                                         totclientidioggi++;
+                                        //alert("Inserisco in clienti di oggi:"+id_sede+" sede:"+cliente_e_sede);
                                     }
                                     datiRiga+="</ul>";
                                     $("#totclientidioggi").html(totclientidioggi);
