@@ -1183,6 +1183,8 @@ function onDeviceReady() {
     $("#CaricaPostazioni").on("click", function(e) {
        console.log("Premuto Carica Postazioni");
         getPostazioniListFromServer();
+        $("#home").trigger("create");
+        location.href = '#home';
     });
 
     $("#nuovocliente_submit").on("click", function (e) {
