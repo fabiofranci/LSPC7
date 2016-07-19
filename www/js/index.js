@@ -603,7 +603,9 @@ function onDeviceReady() {
                                     datiRiga+="</ul>";
                                     $("#totclientidioggi").html(totclientidioggi);
                                     $("#listaclientidioggi").html('');
-                                    $("#listaclientidioggi").append(datiRiga);                                }
+                                    $("#listaclientidioggi").append(datiRiga);
+                                    alert("Ecco qua");
+                                }
                             );
                         });
 
