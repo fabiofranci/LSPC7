@@ -730,6 +730,18 @@ function onDeviceReady() {
         rigaselect='';
         righeselect=new Array();
 
+        var clientitmp=new Array();
+
+        for (var key in clienti_di_oggi) {
+            clientitmp.push(key);
+        }
+
+        clientistring=clientitmp.join(",");
+
+        alert(clientistring);
+
+        return;
+
         $.getJSON(serviceURL + 'gettablepostazioni.php?ult='+global_ultimo_aggiornamento, function (data) {
                 console.log("getPostazioniListFromServer post success");
 
@@ -1147,6 +1159,7 @@ function onDeviceReady() {
 
     $("#CaricaPostazioni").on("click", function(e) {
        console.log("Premuto Carica Postazioni");
+        getPostazioniListFromServer();
     });
 
     $("#nuovocliente_submit").on("click", function (e) {
