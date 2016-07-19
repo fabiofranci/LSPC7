@@ -1236,7 +1236,7 @@ function onDeviceReady() {
                         cliente=clienti_di_oggi[key];
                         //alert(visita.codice_visita);
                         //alert(visita.id_sede);
-                            datiRiga+="<li>"+cliente+"</li>";
+                            datiRiga+="<li><div class='ui-block-b'><button data-icon='flat-mail' data-theme='d'></button></div>"+cliente+"</li>";
                             totclientidioggi++;
                     }
                     datiRiga+="</ul>";
