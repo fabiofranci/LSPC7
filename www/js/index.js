@@ -589,7 +589,7 @@ function onDeviceReady() {
                                     for (i = 0; i < len; i++){
                                         cliente_e_sede=results.rows.item(i).cliente_e_sede;
                                         id_sede=results.rows.item(i).id;
-                                        clienti_di_oggi[id_sede]=cliente_e_sede;
+                                        clienti_di_oggi[id_sede]=sedi[id_sede];
                                         datiRiga+="<li>"+cliente_e_sede+"</li>";
                                         totclientidioggi++;
                                         //alert("Inserisco in clienti di oggi:"+id_sede+" sede:"+cliente_e_sede);
@@ -1236,7 +1236,7 @@ function onDeviceReady() {
                         cliente=clienti_di_oggi[key];
                         //alert(visita.codice_visita);
                         //alert(visita.id_sede);
-                            datiRiga+="<li><div class='ui-block-b'><button data-icon='flat-mail' data-theme='d'></button></div>"+cliente+"</li>";
+                            datiRiga+="<li><div class='ui-block-b'><button data-icon='flat-mail' data-theme='d'></button></div>"+cliente.cliente_e_sede+"</li>";
                             totclientidioggi++;
                     }
                     datiRiga+="</ul>";
