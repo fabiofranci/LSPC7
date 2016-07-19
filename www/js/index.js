@@ -590,7 +590,6 @@ function onDeviceReady() {
                                         clienti_di_oggi[id_sede]=cliente_e_sede;
                                         //alert("Inserisco in clienti di oggi:"+id_sede+" sede:"+cliente_e_sede);
                                     }
-                                }, function() {
                                     var datiRiga='<ul>';
                                     var totclientidioggi=0;
                                     for (var key in clienti_di_oggi) {
@@ -605,6 +604,8 @@ function onDeviceReady() {
                                     $("#listaclientidioggi").html('');
                                     $("#listaclientidioggi").append(datiRiga);
                                     alert("Ecco qua");
+                                }, function() {
+
                                 }
                             );
                         });
