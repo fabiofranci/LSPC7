@@ -598,7 +598,6 @@ function onDeviceReady() {
                                     $("#totclientidioggi").html(totclientidioggi);
                                     $("#listaclientidioggi").html('');
                                     $("#listaclientidioggi").append(datiRiga);
-                                    alert("Ecco qua");
                                 }, function() {
 
                                 }
@@ -764,9 +763,9 @@ function onDeviceReady() {
 
         clientistring=clientitmp.join(",");
 
-        alert(clientistring);
+        //alert(clientistring);
 
-        $.getJSON(serviceURL + 'gettablepostazioni.php?ult='+global_ultimo_aggiornamento, function (data) {
+        $.getJSON(serviceURL + 'gettablepostazioni.php?cl='+clientistring+'&ult='+global_ultimo_aggiornamento, function (data) {
                 console.log("getPostazioniListFromServer post success");
 
                 postazioni_server = data.items;
