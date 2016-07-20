@@ -763,7 +763,7 @@ function onDeviceReady() {
 
         clientistring=clientitmp.join(",");
 
-        //alert(clientistring);
+        alert(clientistring);
 
         $.getJSON(serviceURL + 'gettablepostazioni.php?cl='+clientistring+'&ult='+global_ultimo_aggiornamento, function (data) {
                 console.log("getPostazioniListFromServer post success");
