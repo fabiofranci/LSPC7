@@ -1233,22 +1233,12 @@ function onDeviceReady() {
                 function (tx3) { tx3.executeSql(rigaselect); },
                 onDbError,
                 function() {
-                    alert("Cliente di oggi aggiunto");
-
-                    var datiRiga='<ul>';
-                    var totclientidioggi=0;
-                    for (var key in clienti_di_oggi) {
-                        cliente=clienti_di_oggi[key];
-                        //alert(visita.codice_visita);
-                        //alert(visita.id_sede);
-                            datiRiga+="<li>"+cliente.cliente_e_sede+"</li>";
-                            totclientidioggi++;
-                    }
-                    datiRiga+="</ul>";
-                    $("#totclientidioggi").html(totclientidioggi);
-                    $("#listaclientidioggi").html('');
-                    $("#listaclientidioggi").append(datiRiga);
-
+                    //alert("Cliente di oggi aggiunto");
+                    $("#listavisiteincorso").html('');
+                    $("#menuhome").hide();
+                    $("#finestralogin").hide();
+                    $("#finestrasincro").show();
+                    sincronizzaDaServer();
                 }
             );
     }
