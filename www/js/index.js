@@ -765,7 +765,9 @@ function onDeviceReady() {
 
         //alert(clientistring);
 
-        clientistring=11;
+        if (clientistring=='') {
+            alert("Nessun cliente di oggi in memoria! Aggiungine almeno uno!");
+        }
 
         $.getJSON(serviceURL + 'gettablepostazioni_cl.php?cl='+clientistring+'&ult='+global_ultimo_aggiornamento, function (data) {
                 console.log("getPostazioniListFromServer post success");
