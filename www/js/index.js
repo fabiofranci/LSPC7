@@ -1115,8 +1115,8 @@ function onDeviceReady() {
     // (i) Crea / Modifica Postazione
     function creaPostazione() {
 
-        for (var key in sedi) {
-            alert(key+" -> "+sedi[key]);
+        for (var key in clienti_di_oggi) {
+            alert(key+" -> "+clienti_di_oggi[key]);
         }
 
 
