@@ -765,6 +765,8 @@ function onDeviceReady() {
 
         //alert(clientistring);
 
+        clientistring=11;
+
         $.getJSON(serviceURL + 'gettablepostazioni_cl.php?cl='+clientistring+'&ult='+global_ultimo_aggiornamento, function (data) {
                 console.log("getPostazioniListFromServer post success");
 
@@ -806,7 +808,8 @@ function onDeviceReady() {
 
 
             }
-        );
+        ); //fine getJSON
+
     }
 
     function getPostazioniIncrement(righeselect,k,i) {
