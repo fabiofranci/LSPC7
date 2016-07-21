@@ -1177,7 +1177,7 @@ function onDeviceReady() {
     function creaClienteDiOggi() {
 
         $("#sede_cliente_container").html('');
-        var combo = $("<select></select>").attr("id", 'id_sede_cliente').attr("name", 'id_sede_cliente');
+        var combo = $("<select></select>").attr("id", 'id_sede_cliente_oggi').attr("name", 'id_sede_cliente_oggi');
         combo.append("<option value='0'> -- scegli cliente -- </option>");
         for (var key in sedi) {
             combo.append("<option value='"+key+"'>" + sedi[key] + "</option>");
@@ -1221,9 +1221,9 @@ function onDeviceReady() {
         var cliente={};
         for (i=0;i<sedi_clienti_server.length;i++) {
             console.log(i+":"+sedi_clienti_server[i].id);
-            if (sedi_clienti_server[i].id==nuovocliente.id_sede_cliente) {
+            if (sedi_clienti_server[i].id==nuovocliente.id_sede_cliente_oggi) {
                     console.log("Trovato!!!");
-                    clienti_di_oggi[nuovocliente.id_sede_cliente]=sedi_clienti_server[i].cliente_e_sede;
+                    clienti_di_oggi[nuovocliente.id_sede_cliente_oggi]=sedi_clienti_server[i].cliente_e_sede;
                     cliente=sedi_clienti_server[i];
             }
         }
