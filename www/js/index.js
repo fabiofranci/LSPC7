@@ -1202,7 +1202,7 @@ function onDeviceReady() {
         nuovocliente.ultimo_aggiornamento=getDateTime();
         errore=false;
 
-        if (nuovocliente.id_sede_cliente == 0) { alert("Inserisci il cliente!"); errore=true; }
+        if (nuovocliente.id_sede_cliente_oggi == 0) { alert("Inserisci il cliente!"); errore=true; }
 
         if (errore) {
 
