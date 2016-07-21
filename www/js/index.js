@@ -300,11 +300,11 @@ function onDeviceReady() {
     }
 
     function pulisciDataBase(tx) {
+        tx.executeSql("DROP TABLE IF EXISTS LOCAL_POSTAZIONI");
         tx.executeSql("DROP TABLE IF EXISTS SERVER_CLIENTI");
         tx.executeSql("DROP TABLE IF EXISTS SERVER_SEDI_CLIENTI");
         tx.executeSql("DROP TABLE IF EXISTS SERVER_TIPI_SERVIZIO");
         tx.executeSql("DROP TABLE IF EXISTS SERVER_USERS");
-        tx.executeSql("DROP TABLE IF EXISTS LOCAL_POSTAZIONI");
         tx.executeSql("DROP TABLE IF EXISTS LOCAL_VISITE");
         tx.executeSql("DROP TABLE IF EXISTS LOCAL_ISPEZIONI");
         tx.executeSql("DROP TABLE IF EXISTS LOCAL_ULTIMOAGGIORNAMENTO");
