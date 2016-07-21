@@ -1202,7 +1202,7 @@ function onDeviceReady() {
         nuovocliente.ultimo_aggiornamento=getDateTime();
         errore=false;
 
-        if (nuovocliente.id_sede_cliente_oggi == 0) { alert("Inserisci il cliente!"); errore=true; }
+        if (nuovocliente.id_sede_cliente == 0) { alert("Inserisci il cliente!"); errore=true; }
 
         if (errore) {
 
@@ -1220,9 +1220,9 @@ function onDeviceReady() {
         var cliente={};
         for (i=0;i<sedi_clienti_server.length;i++) {
             console.log(i+":"+sedi_clienti_server[i].id);
-            if (sedi_clienti_server[i].id==nuovocliente.id_sede_cliente_oggi) {
+            if (sedi_clienti_server[i].id==nuovocliente.id_sede_cliente) {
                     console.log("Trovato!!!");
-                    clienti_di_oggi[nuovocliente.id_sede_cliente_oggi]=sedi_clienti_server[i].cliente_e_sede;
+                    clienti_di_oggi[nuovocliente.id_sede_cliente]=sedi_clienti_server[i].cliente_e_sede;
                     cliente=sedi_clienti_server[i];
             }
         }
