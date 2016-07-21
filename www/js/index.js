@@ -1114,8 +1114,8 @@ function onDeviceReady() {
 
     // (i) Crea / Modifica Postazione
     function creaPostazione() {
-
-            $("#sede_cliente_container").html('');
+        alert("Sono qui");
+        $("#sede_cliente_container").html('');
         var combo = $("<select></select>").attr("id", 'id_sede_cliente').attr("name", 'id_sede_cliente');
         combo.append("<option value='0'> -- scegli cliente -- </option>");
         for (var key in clienti_di_oggi) {
