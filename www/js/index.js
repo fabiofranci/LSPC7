@@ -1198,7 +1198,7 @@ function onDeviceReady() {
     $("#nuovocliente_submit").on("click", function (e) {
         e.preventDefault();
         var nuovocliente={};
-        nuovocliente.id_sede_cliente = $("#id_sede_cliente").val();
+        nuovocliente.id_sede_cliente = $("#id_sede_cliente_oggi").val();
         nuovocliente.ultimo_aggiornamento=getDateTime();
         errore=false;
 
