@@ -1175,13 +1175,13 @@ function onDeviceReady() {
 
     function creaClienteDiOggi() {
 
-        $("#sede_cliente_container").html('');
+        $("#sede_cliente_container_oggi").html('');
         var combo = $("<select></select>").attr("id", 'id_sede_cliente_oggi').attr("name", 'id_sede_cliente_oggi');
         combo.append("<option value='0'> -- scegli cliente -- </option>");
         for (var key in sedi) {
             combo.append("<option value='"+key+"'>" + sedi[key] + "</option>");
         }
-        $("#sede_cliente_container").append(combo);
+        $("#sede_cliente_container_oggi").append(combo);
 
         $("#nuovo_cliente_di_oggi").trigger("create");
         location.href="#nuovo_cliente_di_oggi";
