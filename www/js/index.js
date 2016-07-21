@@ -1121,6 +1121,7 @@ function onDeviceReady() {
         $("#sede_cliente_container").html('');
         var combo = $("<select></select>").attr("id", 'id_sede_cliente').attr("name", 'id_sede_cliente');
         combo.append("<option value='0'> -- scegli cliente -- </option>");
+        console.log(combo);
         //for (var key in clienti_di_oggi) {
         //    combo.append("<option value='"+key+"'>" + clienti_di_oggi[key] + "</option>");
         //}
